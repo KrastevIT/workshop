@@ -1,4 +1,6 @@
-﻿namespace CustomerInformation.Data
+﻿using System.Collections.Generic;
+
+namespace CustomerInformation.Data.Models
 {
     public class Customer
     {
@@ -9,5 +11,7 @@
         public string MiddleName { get; set; }
 
         public string LastName { get; set; }
+
+        public ICollection<Address> Addresses { get; set; }
     }
 }

@@ -52,12 +52,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerInformationContext.cs" />
+    <Compile Include="Migrations\202101300939430_Initial.cs" />
+    <Compile Include="Migrations\202101300939430_Initial.designer.cs">
+      <DependentUpon>202101300939430_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\PhoneNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202101300939430_Initial.resx">
+      <DependentUpon>202101300939430_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

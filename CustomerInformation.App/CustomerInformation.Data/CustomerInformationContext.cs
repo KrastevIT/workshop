@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using CustomerInformation.Data.Models;
+using System.Data.Entity;
 
 namespace CustomerInformation.Data
 {
@@ -8,5 +9,12 @@ namespace CustomerInformation.Data
         {
 
         }
+
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Address> Addresses { get; set; }
+
+        public DbSet<PhoneNumber> PhoneNumbers { get; set; }
+
     }
 }
