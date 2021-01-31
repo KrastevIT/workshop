@@ -4,6 +4,8 @@ using CustomerInformation.Models.Addresses;
 using CustomerInformation.Models.Customers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using System.Linq;
 
 public class CustomerService : ICustomerService
 {
@@ -61,6 +63,57 @@ public class CustomerService : ICustomerService
         {
             throw new InvalidOperationException("Invalid Add In DataBase");
         }
+
+        return true;
+    }
+
+    public bool Update(CustomerUpdateModel model)
+    {
+        var db = new CustomerInformationContext();
+
+        var customer = new Customer
+        {
+            Id = model.CustomerId,
+            FirstName = model.FirstName,
+            MiddleName = model.MiddleName,
+            LastName = model.LastName,
+        };
+
+        var homeAddress = new HomeAddress
+        {
+            Id = model.HomeAddressId,
+            Address = model.HomeAddress,
+            CustomerId = model.CustomerId
+        };
+
+        var officeAddress = new OfficeAddress
+        {
+            Id = model.OfficeAddressId,
+            Address = model.OfficeAddress,
+            CustomerId = model.CustomerId
+        };
+
+        var homePhone = new HomePhone
+        {
+            Id = model.HomePhoneId,
+            Number = model.HomePhoneNumber,
+            HomeAddressId = model.HomeAddressId
+        };
+
+        var officePhone = new OfficePhone
+        {
+            Id = model.OfficePhoneId,
+            Number = model.OfficePhoneNumber,
+            OfficeAddressId = model.OfficeAddressId
+        };
+
+        db.Customers.AddOrUpdate(customer);
+        db.HomeAddresses.AddOrUpdate(homeAddress);
+        db.OfficeAddresses.AddOrUpdate(officeAddress);
+        db.HomePhones.AddOrUpdate(homePhone);
+        db.OfficePhones.AddOrUpdate(officePhone);
+
+        db.SaveChanges();
 
         return true;
     }

@@ -11,4 +11,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CustomerCreateModel" nillable="true" type="tns:CustomerCreateModel" />
+  <xs:complexType name="CustomerUpdateModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeAddressId" type="xs:int" />
+      <xs:element minOccurs="0" name="HomePhoneId" type="xs:int" />
+      <xs:element minOccurs="0" name="HomePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficeAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficeAddressId" type="xs:int" />
+      <xs:element minOccurs="0" name="OfficePhoneId" type="xs:int" />
+      <xs:element minOccurs="0" name="OfficePhoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerUpdateModel" nillable="true" type="tns:CustomerUpdateModel" />
 </xs:schema>

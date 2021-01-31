@@ -34,12 +34,6 @@ namespace CustomerInformation.Data
                  .WithRequired(x => x.Customer)
                  .WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<OfficeAddress>()
-            //    .HasRequired(x => x.Customer)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-
-
             base.OnModelCreating(modelBuilder);
         }
 

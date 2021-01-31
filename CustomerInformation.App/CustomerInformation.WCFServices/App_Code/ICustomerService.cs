@@ -6,4 +6,7 @@ public interface ICustomerService
 {
     [OperationContract]
     bool Create(CustomerCreateModel model);
+
+    [OperationContract]
+    bool Update(CustomerUpdateModel model);
 }
