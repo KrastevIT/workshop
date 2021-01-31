@@ -9,4 +9,7 @@ public interface ICustomerService
 
     [OperationContract]
     bool Update(CustomerUpdateModel model);
+
+    [OperationContract]
+    bool DeleteById(DeleteByIdModel model);
 }

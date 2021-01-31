@@ -28,4 +28,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CustomerUpdateModel" nillable="true" type="tns:CustomerUpdateModel" />
+  <xs:complexType name="DeleteByIdModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteByIdModel" nillable="true" type="tns:DeleteByIdModel" />
 </xs:schema>

@@ -404,6 +404,51 @@ namespace CustomerInformation.App.CustomerService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DeleteByIdModel", Namespace="http://schemas.datacontract.org/2004/07/CustomerInformation.Models.Customers")]
+    [System.SerializableAttribute()]
+    public partial class DeleteByIdModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CustomerService.ICustomerService")]
     public interface ICustomerService {
@@ -419,6 +464,12 @@ namespace CustomerInformation.App.CustomerService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/Update", ReplyAction="http://tempuri.org/ICustomerService/UpdateResponse")]
         System.Threading.Tasks.Task<bool> UpdateAsync(CustomerInformation.App.CustomerService.CustomerUpdateModel model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteById", ReplyAction="http://tempuri.org/ICustomerService/DeleteByIdResponse")]
+        bool DeleteById(CustomerInformation.App.CustomerService.DeleteByIdModel model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteById", ReplyAction="http://tempuri.org/ICustomerService/DeleteByIdResponse")]
+        System.Threading.Tasks.Task<bool> DeleteByIdAsync(CustomerInformation.App.CustomerService.DeleteByIdModel model);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -462,6 +513,14 @@ namespace CustomerInformation.App.CustomerService {
         
         public System.Threading.Tasks.Task<bool> UpdateAsync(CustomerInformation.App.CustomerService.CustomerUpdateModel model) {
             return base.Channel.UpdateAsync(model);
+        }
+        
+        public bool DeleteById(CustomerInformation.App.CustomerService.DeleteByIdModel model) {
+            return base.Channel.DeleteById(model);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteByIdAsync(CustomerInformation.App.CustomerService.DeleteByIdModel model) {
+            return base.Channel.DeleteByIdAsync(model);
         }
     }
 }

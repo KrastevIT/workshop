@@ -19,7 +19,16 @@ namespace CustomerInformation.App.Controllers
         {
             var customerService = new CustomerServiceClient();
             var result = customerService.Update(model);
-            return true;
+            return result;
+        }
+
+        [Route("api/Customer/Delete")]
+        [HttpPost]
+        public bool Delete(DeleteByIdModel model)
+        {
+            var customerService = new CustomerServiceClient();
+            var result = customerService.DeleteById(model);
+            return result;
         }
 
     }
