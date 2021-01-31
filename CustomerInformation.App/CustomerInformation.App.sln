@@ -4,8 +4,36 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30709.64
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInformation.App", "CustomerInformation.App\CustomerInformation.App.csproj", "{8F7024C5-27B6-47A6-81B5-0AB35EBBCC8E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4EF2C777-701E-4851-AD00-79F205FA7562} = {4EF2C777-701E-4851-AD00-79F205FA7562}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInformation.Data", "CustomerInformation.Data\CustomerInformation.Data.csproj", "{6743B8EE-B231-4118-B34A-FED672D38732}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CustomerInformation.WCFServices", "CustomerInformation.WCFServices\", "{4EF2C777-701E-4851-AD00-79F205FA7562}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{e6660616-4253-4487-87bd-a57a64ad5cfb}|CustomerInformation.Models.dll;{6743b8ee-b231-4118-b34a-fed672d38732}|CustomerInformation.Data.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50993"
+		Debug.AspNetCompiler.PhysicalPath = "CustomerInformation.WCFServices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50993\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50993"
+		Release.AspNetCompiler.PhysicalPath = "CustomerInformation.WCFServices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50993\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50993"
+		SlnRelativePath = "CustomerInformation.WCFServices\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerInformation.Models", "CustomerInformation.Models\CustomerInformation.Models.csproj", "{E6660616-4253-4487-87BD-A57A64AD5CFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +49,14 @@ Global
 		{6743B8EE-B231-4118-B34A-FED672D38732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6743B8EE-B231-4118-B34A-FED672D38732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6743B8EE-B231-4118-B34A-FED672D38732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EF2C777-701E-4851-AD00-79F205FA7562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF2C777-701E-4851-AD00-79F205FA7562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF2C777-701E-4851-AD00-79F205FA7562}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF2C777-701E-4851-AD00-79F205FA7562}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E6660616-4253-4487-87BD-A57A64AD5CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6660616-4253-4487-87BD-A57A64AD5CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6660616-4253-4487-87BD-A57A64AD5CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6660616-4253-4487-87BD-A57A64AD5CFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

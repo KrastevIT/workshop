@@ -2,18 +2,16 @@
 
 namespace CustomerInformation.Data.Models
 {
-    public class Address
+    public class OfficeAddress
     {
         public int Id { get; set; }
 
-        public string HomeAddress { get; set; }
-
-        public string OfficeAddress { get; set; }
+        public string Address { get; set; }
 
         public int CustomerId { get; set; }
 
         public Customer Customer { get; set; }
 
-        public ICollection<PhoneNumber> PhoneNumbers { get; set; }
+        public ICollection<OfficePhone> OfficePhones { get; set; }
     }
 }

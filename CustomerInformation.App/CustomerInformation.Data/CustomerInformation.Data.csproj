@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,14 +54,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerInformationContext.cs" />
-    <Compile Include="Migrations\202101300939430_Initial.cs" />
-    <Compile Include="Migrations\202101300939430_Initial.designer.cs">
-      <DependentUpon>202101300939430_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202101310935274_InitialData.cs" />
+    <Compile Include="Migrations\202101310935274_InitialData.designer.cs">
+      <DependentUpon>202101310935274_InitialData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\HomeAddress.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\PhoneNumber.cs" />
+    <Compile Include="Models\HomePhone.cs" />
+    <Compile Include="Models\OfficeAddress.cs" />
+    <Compile Include="Models\OfficePhone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,8 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101300939430_Initial.resx">
-      <DependentUpon>202101300939430_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101310935274_InitialData.resx">
+      <DependentUpon>202101310935274_InitialData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

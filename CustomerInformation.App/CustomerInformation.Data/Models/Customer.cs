@@ -12,6 +12,8 @@ namespace CustomerInformation.Data.Models
 
         public string LastName { get; set; }
 
-        public ICollection<Address> Addresses { get; set; }
+        public ICollection<HomeAddress> HomeAddresses { get; set; }
+
+        public ICollection<OfficeAddress> OfficeAddresses { get; set; }
     }
 }
