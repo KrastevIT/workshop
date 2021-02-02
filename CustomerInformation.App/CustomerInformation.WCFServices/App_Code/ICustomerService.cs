@@ -1,4 +1,5 @@
 ﻿using CustomerInformation.Models.Customers;
+using System.Collections.Generic;
 using System.ServiceModel;
 
 [ServiceContract]
@@ -12,4 +13,7 @@ public interface ICustomerService
 
     [OperationContract]
     bool DeleteById(DeleteByIdModel model);
+
+    [OperationContract]
+    ICollection<GetAllDataModel> GetAllData();
 }

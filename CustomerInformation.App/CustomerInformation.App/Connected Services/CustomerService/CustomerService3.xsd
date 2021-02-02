@@ -34,4 +34,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DeleteByIdModel" nillable="true" type="tns:DeleteByIdModel" />
+  <xs:complexType name="ArrayOfGetAllDataModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetAllDataModel" nillable="true" type="tns:GetAllDataModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetAllDataModel" nillable="true" type="tns:ArrayOfGetAllDataModel" />
+  <xs:complexType name="GetAllDataModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeAddresses" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomePhones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficeAddresses" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficePhones" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllDataModel" nillable="true" type="tns:GetAllDataModel" />
 </xs:schema>

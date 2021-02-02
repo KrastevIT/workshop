@@ -449,6 +449,115 @@ namespace CustomerInformation.App.CustomerService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetAllDataModel", Namespace="http://schemas.datacontract.org/2004/07/CustomerInformation.Models.Customers")]
+    [System.SerializableAttribute()]
+    public partial class GetAllDataModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FullNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HomeAddressesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HomePhonesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficeAddressesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OfficePhonesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FullName {
+            get {
+                return this.FullNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FullNameField, value) != true)) {
+                    this.FullNameField = value;
+                    this.RaisePropertyChanged("FullName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HomeAddresses {
+            get {
+                return this.HomeAddressesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HomeAddressesField, value) != true)) {
+                    this.HomeAddressesField = value;
+                    this.RaisePropertyChanged("HomeAddresses");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HomePhones {
+            get {
+                return this.HomePhonesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HomePhonesField, value) != true)) {
+                    this.HomePhonesField = value;
+                    this.RaisePropertyChanged("HomePhones");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficeAddresses {
+            get {
+                return this.OfficeAddressesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficeAddressesField, value) != true)) {
+                    this.OfficeAddressesField = value;
+                    this.RaisePropertyChanged("OfficeAddresses");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OfficePhones {
+            get {
+                return this.OfficePhonesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OfficePhonesField, value) != true)) {
+                    this.OfficePhonesField = value;
+                    this.RaisePropertyChanged("OfficePhones");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CustomerService.ICustomerService")]
     public interface ICustomerService {
@@ -470,6 +579,12 @@ namespace CustomerInformation.App.CustomerService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteById", ReplyAction="http://tempuri.org/ICustomerService/DeleteByIdResponse")]
         System.Threading.Tasks.Task<bool> DeleteByIdAsync(CustomerInformation.App.CustomerService.DeleteByIdModel model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllData", ReplyAction="http://tempuri.org/ICustomerService/GetAllDataResponse")]
+        CustomerInformation.App.CustomerService.GetAllDataModel[] GetAllData();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllData", ReplyAction="http://tempuri.org/ICustomerService/GetAllDataResponse")]
+        System.Threading.Tasks.Task<CustomerInformation.App.CustomerService.GetAllDataModel[]> GetAllDataAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -521,6 +636,14 @@ namespace CustomerInformation.App.CustomerService {
         
         public System.Threading.Tasks.Task<bool> DeleteByIdAsync(CustomerInformation.App.CustomerService.DeleteByIdModel model) {
             return base.Channel.DeleteByIdAsync(model);
+        }
+        
+        public CustomerInformation.App.CustomerService.GetAllDataModel[] GetAllData() {
+            return base.Channel.GetAllData();
+        }
+        
+        public System.Threading.Tasks.Task<CustomerInformation.App.CustomerService.GetAllDataModel[]> GetAllDataAsync() {
+            return base.Channel.GetAllDataAsync();
         }
     }
 }

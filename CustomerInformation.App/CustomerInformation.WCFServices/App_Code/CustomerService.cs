@@ -3,8 +3,10 @@ using CustomerInformation.Data.Models;
 using CustomerInformation.Models.Customers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Text;
 
 public class CustomerService : ICustomerService
 {
@@ -145,5 +147,66 @@ public class CustomerService : ICustomerService
         }
 
         return true;
+    }
+
+    public ICollection<GetAllDataModel> GetAllData()
+    {
+        var db = new CustomerInformationContext();
+
+        var customerWithData = new List<GetAllDataModel>();
+
+        var employees = db.Customers
+               .Include(x => x.OfficeAddresses)
+               .Include(x => x.OfficeAddresses.Select(y => y.OfficePhones))
+               .Include(x => x.HomeAddresses.Select(y => y.HomePhones))
+               .ToList();
+
+        foreach (var customer in employees)
+        {
+            string name = "Name: " + customer.FirstName + ", " + customer.MiddleName + " " + customer.LastName;
+
+            var officeAddreses = GetAddressesToString(customer.OfficeAddresses.Select(x => x.Address).ToList(), "Office Adress:");
+            var homeAddresses = GetAddressesToString(customer.OfficeAddresses.Select(x => x.Address).ToList(), "Home Adress:");
+
+            var officePhones = GetPhonesToString(customer.OfficeAddresses.SelectMany(x => x.OfficePhones.Select(y => y.Number)).ToList());
+            var homePhones = GetPhonesToString(customer.HomeAddresses.SelectMany(x => x.HomePhones.Select(y => y.Number)).ToList());
+
+            customerWithData.Add(new GetAllDataModel
+            {
+                FullName = name,
+                OfficeAddresses = officeAddreses,
+                OfficePhones = officePhones,
+                HomeAddresses = homeAddresses,
+                HomePhones = homePhones
+            });
+        }
+
+        return customerWithData;
+    }
+
+    private string GetAddressesToString(List<string> addresses, string place)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        foreach (var address in addresses)
+        {
+            string model = place + " " + address;
+            sb.AppendLine(model);
+        }
+
+        return sb.ToString();
+    }
+
+    private string GetPhonesToString(List<string> phones)
+    {
+        StringBuilder sb = new StringBuilder();
+
+        foreach (var phone in phones)
+        {
+            string model = "Tel: " + phone;
+            sb.AppendLine(model);
+        }
+
+        return sb.ToString();
     }
 }

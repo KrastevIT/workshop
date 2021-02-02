@@ -46,6 +46,7 @@
     <Compile Include="Customers\CustomerCreateModel.cs" />
     <Compile Include="Customers\CustomerUpdateModel.cs" />
     <Compile Include="Customers\DeleteByIdModel.cs" />
+    <Compile Include="Customers\GetAllDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

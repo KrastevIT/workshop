@@ -1,4 +1,5 @@
 ﻿using CustomerInformation.App.CustomerService;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace CustomerInformation.App.Controllers
@@ -28,6 +29,14 @@ namespace CustomerInformation.App.Controllers
         {
             var customerService = new CustomerServiceClient();
             var result = customerService.DeleteById(model);
+            return result;
+        }
+
+        [Route("api/Customer/GetAll")]
+        public ICollection<GetAllDataModel> GetAll()
+        {
+            var customerService = new CustomerServiceClient();
+            var result = customerService.GetAllData();
             return result;
         }
 
