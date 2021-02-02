@@ -558,6 +558,99 @@ namespace CustomerInformation.App.CustomerService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerByIdModel", Namespace="http://schemas.datacontract.org/2004/07/CustomerInformation.Models.Customers")]
+    [System.SerializableAttribute()]
+    public partial class CustomerByIdModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MiddleNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MiddleName {
+            get {
+                return this.MiddleNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MiddleNameField, value) != true)) {
+                    this.MiddleNameField = value;
+                    this.RaisePropertyChanged("MiddleName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CustomerService.ICustomerService")]
     public interface ICustomerService {
@@ -585,6 +678,12 @@ namespace CustomerInformation.App.CustomerService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetAllData", ReplyAction="http://tempuri.org/ICustomerService/GetAllDataResponse")]
         System.Threading.Tasks.Task<CustomerInformation.App.CustomerService.GetAllDataModel[]> GetAllDataAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomerById", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerByIdResponse")]
+        CustomerInformation.App.CustomerService.CustomerByIdModel GetCustomerById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomerById", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerByIdResponse")]
+        System.Threading.Tasks.Task<CustomerInformation.App.CustomerService.CustomerByIdModel> GetCustomerByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -644,6 +743,14 @@ namespace CustomerInformation.App.CustomerService {
         
         public System.Threading.Tasks.Task<CustomerInformation.App.CustomerService.GetAllDataModel[]> GetAllDataAsync() {
             return base.Channel.GetAllDataAsync();
+        }
+        
+        public CustomerInformation.App.CustomerService.CustomerByIdModel GetCustomerById(int id) {
+            return base.Channel.GetCustomerById(id);
+        }
+        
+        public System.Threading.Tasks.Task<CustomerInformation.App.CustomerService.CustomerByIdModel> GetCustomerByIdAsync(int id) {
+            return base.Channel.GetCustomerByIdAsync(id);
         }
     }
 }

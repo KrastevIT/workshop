@@ -16,4 +16,7 @@ public interface ICustomerService
 
     [OperationContract]
     ICollection<GetAllDataModel> GetAllData();
+
+    [OperationContract]
+    CustomerByIdModel GetCustomerById(int id);
 }

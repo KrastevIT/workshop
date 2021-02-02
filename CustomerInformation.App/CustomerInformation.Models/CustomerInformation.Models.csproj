@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Addresses\AddressCreateModel.cs" />
+    <Compile Include="Customers\CustomerByIdModel.cs" />
     <Compile Include="Customers\CustomerCreateModel.cs" />
     <Compile Include="Customers\CustomerUpdateModel.cs" />
     <Compile Include="Customers\DeleteByIdModel.cs" />

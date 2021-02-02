@@ -171,6 +171,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Connected Services\CustomerService\CustomerInformation.App.CustomerService.CustomerByIdModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Connected Services\CustomerService\CustomerInformation.App.CustomerService.GetAllDataModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

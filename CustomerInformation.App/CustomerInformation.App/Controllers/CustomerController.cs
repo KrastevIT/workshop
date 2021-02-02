@@ -40,5 +40,13 @@ namespace CustomerInformation.App.Controllers
             return result;
         }
 
+        [Route("api/Customer/GetCustomerById/{id}")]
+        public CustomerByIdModel GetCustomerById(int id)
+        {
+            var customerService = new CustomerServiceClient();
+            var result = customerService.GetCustomerById(id);
+            return result;
+        }
+
     }
 }

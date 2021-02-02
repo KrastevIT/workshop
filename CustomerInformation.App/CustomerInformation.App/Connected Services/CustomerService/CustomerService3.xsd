@@ -50,4 +50,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GetAllDataModel" nillable="true" type="tns:GetAllDataModel" />
+  <xs:complexType name="CustomerByIdModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerByIdModel" nillable="true" type="tns:CustomerByIdModel" />
 </xs:schema>

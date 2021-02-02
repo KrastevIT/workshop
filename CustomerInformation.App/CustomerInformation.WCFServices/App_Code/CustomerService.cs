@@ -184,6 +184,22 @@ public class CustomerService : ICustomerService
         return customerWithData;
     }
 
+    public CustomerByIdModel GetCustomerById(int id)
+    {
+        var db = new CustomerInformationContext();
+        var customer = db.Customers.FirstOrDefault(x => x.Id == id);
+
+        var model = new CustomerByIdModel
+        {
+            Id = id,
+            FirstName = customer.FirstName,
+            MiddleName = customer.MiddleName,
+            LastName = customer.LastName
+        };
+
+        return model;
+    }
+
     private string GetAddressesToString(List<string> addresses, string place)
     {
         StringBuilder sb = new StringBuilder();
@@ -209,4 +225,6 @@ public class CustomerService : ICustomerService
 
         return sb.ToString();
     }
+
+
 }
