@@ -6,4 +6,7 @@ public interface IAddressService
 {
     [OperationContract]
     AddressByIdModel GetHomeAddressById(int id);
+
+    [OperationContract]
+    AddressByIdModel GetOfficeAddressById(int id);
 }

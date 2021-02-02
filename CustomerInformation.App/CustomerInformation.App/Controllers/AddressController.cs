@@ -12,5 +12,13 @@ namespace CustomerInformation.App.Controllers
             var model = addressService.GetHomeAddressById(id);
             return model;
         }
+
+        [Route("api/Address/GetOfficeAddressById/{id}")]
+        public AddressByIdModel GetOfficeAddressById(int id)
+        {
+            var addressService = new AddressServiceClient();
+            var model = addressService.GetOfficeAddressById(id);
+            return model;
+        }
     }
 }

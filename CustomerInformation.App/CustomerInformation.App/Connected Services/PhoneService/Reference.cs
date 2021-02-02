@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CustomerInformation.App.AddressService {
+namespace CustomerInformation.App.PhoneService {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AddressByIdModel", Namespace="http://schemas.datacontract.org/2004/07/CustomerInformation.Models.Addresses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PhoneNumberByIdModel", Namespace="http://schemas.datacontract.org/2004/07/CustomerInformation.Models.Phones")]
     [System.SerializableAttribute()]
-    public partial class AddressByIdModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class PhoneNumberByIdModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -75,63 +75,63 @@ namespace CustomerInformation.App.AddressService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AddressService.IAddressService")]
-    public interface IAddressService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PhoneService.IPhoneService")]
+    public interface IPhoneService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressService/GetHomeAddressById", ReplyAction="http://tempuri.org/IAddressService/GetHomeAddressByIdResponse")]
-        CustomerInformation.App.AddressService.AddressByIdModel GetHomeAddressById(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPhoneService/GetHomePhoneNumberById", ReplyAction="http://tempuri.org/IPhoneService/GetHomePhoneNumberByIdResponse")]
+        CustomerInformation.App.PhoneService.PhoneNumberByIdModel GetHomePhoneNumberById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressService/GetHomeAddressById", ReplyAction="http://tempuri.org/IAddressService/GetHomeAddressByIdResponse")]
-        System.Threading.Tasks.Task<CustomerInformation.App.AddressService.AddressByIdModel> GetHomeAddressByIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPhoneService/GetHomePhoneNumberById", ReplyAction="http://tempuri.org/IPhoneService/GetHomePhoneNumberByIdResponse")]
+        System.Threading.Tasks.Task<CustomerInformation.App.PhoneService.PhoneNumberByIdModel> GetHomePhoneNumberByIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressService/GetOfficeAddressById", ReplyAction="http://tempuri.org/IAddressService/GetOfficeAddressByIdResponse")]
-        CustomerInformation.App.AddressService.AddressByIdModel GetOfficeAddressById(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPhoneService/GetOfficePhoneNumberById", ReplyAction="http://tempuri.org/IPhoneService/GetOfficePhoneNumberByIdResponse")]
+        CustomerInformation.App.PhoneService.PhoneNumberByIdModel GetOfficePhoneNumberById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressService/GetOfficeAddressById", ReplyAction="http://tempuri.org/IAddressService/GetOfficeAddressByIdResponse")]
-        System.Threading.Tasks.Task<CustomerInformation.App.AddressService.AddressByIdModel> GetOfficeAddressByIdAsync(int id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPhoneService/GetOfficePhoneNumberById", ReplyAction="http://tempuri.org/IPhoneService/GetOfficePhoneNumberByIdResponse")]
+        System.Threading.Tasks.Task<CustomerInformation.App.PhoneService.PhoneNumberByIdModel> GetOfficePhoneNumberByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAddressServiceChannel : CustomerInformation.App.AddressService.IAddressService, System.ServiceModel.IClientChannel {
+    public interface IPhoneServiceChannel : CustomerInformation.App.PhoneService.IPhoneService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddressServiceClient : System.ServiceModel.ClientBase<CustomerInformation.App.AddressService.IAddressService>, CustomerInformation.App.AddressService.IAddressService {
+    public partial class PhoneServiceClient : System.ServiceModel.ClientBase<CustomerInformation.App.PhoneService.IPhoneService>, CustomerInformation.App.PhoneService.IPhoneService {
         
-        public AddressServiceClient() {
+        public PhoneServiceClient() {
         }
         
-        public AddressServiceClient(string endpointConfigurationName) : 
+        public PhoneServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public AddressServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public PhoneServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public AddressServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PhoneServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public AddressServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PhoneServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public CustomerInformation.App.AddressService.AddressByIdModel GetHomeAddressById(int id) {
-            return base.Channel.GetHomeAddressById(id);
+        public CustomerInformation.App.PhoneService.PhoneNumberByIdModel GetHomePhoneNumberById(int id) {
+            return base.Channel.GetHomePhoneNumberById(id);
         }
         
-        public System.Threading.Tasks.Task<CustomerInformation.App.AddressService.AddressByIdModel> GetHomeAddressByIdAsync(int id) {
-            return base.Channel.GetHomeAddressByIdAsync(id);
+        public System.Threading.Tasks.Task<CustomerInformation.App.PhoneService.PhoneNumberByIdModel> GetHomePhoneNumberByIdAsync(int id) {
+            return base.Channel.GetHomePhoneNumberByIdAsync(id);
         }
         
-        public CustomerInformation.App.AddressService.AddressByIdModel GetOfficeAddressById(int id) {
-            return base.Channel.GetOfficeAddressById(id);
+        public CustomerInformation.App.PhoneService.PhoneNumberByIdModel GetOfficePhoneNumberById(int id) {
+            return base.Channel.GetOfficePhoneNumberById(id);
         }
         
-        public System.Threading.Tasks.Task<CustomerInformation.App.AddressService.AddressByIdModel> GetOfficeAddressByIdAsync(int id) {
-            return base.Channel.GetOfficeAddressByIdAsync(id);
+        public System.Threading.Tasks.Task<CustomerInformation.App.PhoneService.PhoneNumberByIdModel> GetOfficePhoneNumberByIdAsync(int id) {
+            return base.Channel.GetOfficePhoneNumberByIdAsync(id);
         }
     }
 }

@@ -18,4 +18,19 @@ public class AddressService : IAddressService
 
         return model;
     }
+
+    public AddressByIdModel GetOfficeAddressById(int id)
+    {
+        var db = new CustomerInformationContext();
+
+        var address = db.OfficeAddresses.FirstOrDefault(x => x.Id == id);
+
+        var model = new AddressByIdModel
+        {
+            Id = id,
+            Number = address.Address
+        };
+
+        return model;
+    }
 }
